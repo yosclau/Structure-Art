@@ -1,0 +1,12 @@
+export const LOGO  = '/images/logo.png';
+export const HERO1 = '/images/h1.jpg';
+export const HERO2 = '/images/h2.jpg';
+export const SRV1  = '/images/s1.jpg';
+export const SRV2  = '/images/s2.jpg';
+export const SRV3  = '/images/s3.jpg';
+export const PORT1 = '/images/p1.jpg';
+export const PORT2 = '/images/p2.jpg';
+export const PORT3 = '/images/p3.jpg';
+export const PORT4 = '/images/p4.jpg';
+export const PORT5 = '/images/p5.jpg';
+export const PORT6 = '/images/p6.jpg';
