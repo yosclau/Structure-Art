@@ -24,6 +24,10 @@ const IconWhatsApp = () => (
 
 export default function Footer() {
   const { lang, L, ui } = useLang();
+  const social = (net, shown) => {
+    const base = lang === 'es' ? `Structure Art en ${net} (abre en otra pestaña)` : `Structure Art on ${net} (opens in a new tab)`;
+    return shown && shown !== net ? `${shown}, ${base}` : base;
+  };
 
   if (!SHOW_PENDING) {
     if (isPending(CONTACT.license)) logMissing('numero de licencia', 'sin linea de licencia en footer hasta tener numero real');
@@ -66,12 +70,13 @@ export default function Footer() {
           <ul>
             <li><a href={CONTACT.phoneHref}>{CONTACT.phoneDisplay}</a></li>
             <li><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
-            <li><a href={CONTACT.instagram} target="_blank" rel="noreferrer">{CONTACT.instagramHandle}</a></li>
+            <li><a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label={social('Instagram', CONTACT.instagramHandle)}>{CONTACT.instagramHandle}</a></li>
+            <li><a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" aria-label={social('Facebook')}>Facebook</a></li>
           </ul>
           <div className="footer-social" aria-label={L(ui.footer.follow_title)}>
-            <a href={CONTACT.instagram} target="_blank" rel="noreferrer" aria-label="Instagram"><IconInstagram /></a>
-            <a href={CONTACT.facebook} target="_blank" rel="noreferrer" aria-label="Facebook"><IconFacebook /></a>
-            <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp"><IconWhatsApp /></a>
+            <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label={social('Instagram')}><IconInstagram /></a>
+            <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" aria-label={social('Facebook')}><IconFacebook /></a>
+            <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><IconWhatsApp /></a>
           </div>
         </div>
       </div>

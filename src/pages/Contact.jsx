@@ -11,7 +11,11 @@ const Icon = ({ path }) => (
 );
 
 export default function Contact() {
-  const { L, ui } = useLang();
+  const { lang, L, ui } = useLang();
+  const social = (net, shown) => {
+    const base = lang === 'es' ? `Structure Art en ${net} (abre en otra pestaña)` : `Structure Art on ${net} (opens in a new tab)`;
+    return shown && shown !== net ? `${shown}, ${base}` : base;
+  };
   useMeta({ title: L(ui.meta.contact_title), description: L(ui.meta.contact_desc) });
   useReveal();
 
@@ -36,12 +40,14 @@ export default function Contact() {
       label: CONTACT.instagramHandle,
       href: CONTACT.instagram,
       external: true,
+      aria: social('Instagram', CONTACT.instagramHandle),
       icon: <><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none" /></>,
     },
     {
       label: 'Facebook',
       href: CONTACT.facebook,
       external: true,
+      aria: social('Facebook'),
       icon: <path d="M14 8h2V5h-2a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h2.2l.5-3H13V9a1 1 0 0 1 1-1z" />,
     },
   ];
@@ -68,7 +74,8 @@ export default function Contact() {
                 <a
                   key={d.href}
                   href={d.href}
-                  {...(d.external ? { target: '_blank', rel: 'noreferrer' } : {})}
+                  {...(d.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  {...(d.aria ? { 'aria-label': d.aria } : {})}
                 >
                   <Icon path={d.icon} />
                   <span>{d.label}</span>

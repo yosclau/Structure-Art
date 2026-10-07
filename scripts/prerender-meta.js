@@ -50,7 +50,7 @@ function businessJsonLd(lang) {
     email: 'hola@structureartbuilt.com',
     areaServed: { '@type': 'City', name: 'Chicago' },
     address: { '@type': 'PostalAddress', addressLocality: 'Chicago', addressRegion: 'IL', addressCountry: 'US' },
-    sameAs: ['https://www.instagram.com/structure_art_built', 'https://facebook.com/share/1AmXmGRe7j'],
+    sameAs: ['https://www.instagram.com/structure_art_built/', 'https://www.facebook.com/p/Structure-Art-BUILT-100042064643947/'],
     knowsLanguage: ['en', 'es'],
   };
 }
