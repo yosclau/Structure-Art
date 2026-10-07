@@ -9,6 +9,7 @@ import Portrait from '../components/Portrait';
 import Pending, { PendingSection } from '../components/Pending';
 import useReveal from '../components/useReveal';
 import LeadForm from '../components/LeadForm';
+import GoogleReviews from '../components/GoogleReviews';
 import projectsData from '../content/projects.json';
 import services from '../content/services.json';
 import about from '../content/about.json';
@@ -275,6 +276,9 @@ export default function Home() {
           </div>
         </section>
       </PendingSection>
+
+      {/* Resenas en Google: ficha de mapa + tarjeta de vidrio, sobre foto oscura entre §09 (gray) y §11 (gray) */}
+      <GoogleReviews />
 
       {/* §11 CTA final — gray (nunca charcoal pegado al footer navy) */}
       <section className="sec s-gray final-cta">

@@ -152,6 +152,22 @@
     "cta": { "en": "Start Your Vision", "es": "Cuéntanos tu idea" }
   },
 
+  "reviews": {
+    "eyebrow": { "en": "Google reviews", "es": "Reseñas en Google" },
+    "title": { "en": "Worked with us?", "es": "¿Trabajaste con nosotros?" },
+    "text": { "en": "Your review helps other families find a builder they can trust.", "es": "Tu reseña ayuda a otras familias a encontrar a alguien de confianza." },
+    "write": { "en": "Leave a Google review", "es": "Déjanos una reseña en Google" },
+    "profile": { "en": "See us on Google", "es": "Vernos en Google" },
+    "directions": { "en": "Directions", "es": "Cómo llegar" },
+    "takes": { "en": "Takes less than a minute", "es": "Toma menos de un minuto" },
+    "place_name": "Structure Art Built",
+    "place_type": { "en": "General contractor", "es": "Contratista general" },
+    "map_title": { "en": "Structure Art Built on Google Maps", "es": "Structure Art Built en Google Maps" },
+    "write_aria": { "en": "Leave a Google review for Structure Art (opens in a new tab)", "es": "Déjanos una reseña de Structure Art en Google (abre en otra pestaña)" },
+    "profile_aria": { "en": "See Structure Art on Google (opens in a new tab)", "es": "Ver Structure Art en Google (abre en otra pestaña)" },
+    "directions_aria": { "en": "Directions to Structure Art Built on Google Maps (opens in a new tab)", "es": "Cómo llegar a Structure Art Built en Google Maps (abre en otra pestaña)" }
+  },
+
   "portfolio": {
     "eyebrow": { "en": "Portfolio", "es": "Portafolio" },
     "title": { "en": "Real Projects, Real Process", "es": "Proyectos reales, proceso real" },

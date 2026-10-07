@@ -2,6 +2,7 @@ import { useLang } from '../lang';
 import { useMeta } from '../seo';
 import { CONTACT } from '../config';
 import LeadForm from '../components/LeadForm';
+import GoogleReviews from '../components/GoogleReviews';
 import useReveal from '../components/useReveal';
 
 const Icon = ({ path }) => (
@@ -82,6 +83,7 @@ export default function Contact() {
                 </a>
               ))}
             </div>
+            <GoogleReviews variant="compact" />
             <div className="map-note">
               <h3>{L(ui.contact_page.map_title)}</h3>
               <p>{L(ui.contact_page.map_text)}</p>
