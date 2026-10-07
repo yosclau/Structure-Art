@@ -1,5 +1,5 @@
 {
   "_README": "UNICA fuente de la URL publica del sitio. Al conectar el dominio propio, cambia 'url' aqui (o define SITE_URL / REACT_APP_SITE_URL en Vercel). La usan seo.js, el HTML de cada pagina, sitemap.xml y robots.txt (scripts/prerender-meta.js).",
-  "url": "https://structure-art-otyl.vercel.app",
+  "url": "https://www.structureartbuilt.com",
   "og_default": "/media/og/og-default.jpg"
 }
