@@ -47,7 +47,7 @@ function businessJsonLd(lang) {
     logo: `${SITE}/media/brand/logo-badge.webp`,
     url: `${SITE}/${lang}`,
     telephone: '+14709148996',
-    email: 'Structureartco@gmail.com',
+    email: 'hola@structureartbuilt.com',
     areaServed: { '@type': 'City', name: 'Chicago' },
     address: { '@type': 'PostalAddress', addressLocality: 'Chicago', addressRegion: 'IL', addressCountry: 'US' },
     sameAs: ['https://www.instagram.com/structure_art_built', 'https://facebook.com/share/1AmXmGRe7j'],

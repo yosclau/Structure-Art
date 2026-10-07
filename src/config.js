@@ -26,7 +26,7 @@ export const CONTACT = {
   phoneDisplay: '(470) 914-8996',
   phoneHref: 'tel:+14709148996',
   whatsapp: 'https://wa.me/14709148996',
-  email: 'Structureartco@gmail.com',
+  email: 'hola@structureartbuilt.com',
   instagram: 'https://www.instagram.com/structure_art_built',
   instagramHandle: '@structure_art_built',
   facebook: 'https://facebook.com/share/1AmXmGRe7j',
