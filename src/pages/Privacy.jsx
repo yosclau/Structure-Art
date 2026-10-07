@@ -1,5 +1,19 @@
 import { useLang } from '../lang';
 import { useMeta } from '../seo';
+import { CONTACT } from '../config';
+
+// Inserta el correo de contacto como enlace donde el texto dice {email}.
+function withEmail(text) {
+  if (!text.includes('{email}')) return text;
+  const [before, after] = text.split('{email}');
+  return (
+    <>
+      {before}
+      <a href={`mailto:${CONTACT.email}`} className="inline-link">{CONTACT.email}</a>
+      {after}
+    </>
+  );
+}
 
 export default function Privacy() {
   const { L, ui } = useLang();
@@ -18,7 +32,7 @@ export default function Privacy() {
           {ui.privacy_page.sections.map((s) => (
             <div key={s.h.en} style={{ marginBottom: 36 }}>
               <h2 className="display-3" style={{ marginBottom: 10 }}>{L(s.h)}</h2>
-              <p>{L(s.p)}</p>
+              <p>{withEmail(L(s.p))}</p>
             </div>
           ))}
         </div>

@@ -3,23 +3,23 @@
   "_origen": "src/lang.js (posicionamiento anterior). El texto biográfico es neutral y sirve igual para el posicionamiento nuevo.",
 
   "bio": {
-    "eyebrow":  { "en": "The Story", "es": "La Historia" },
+    "eyebrow":  { "en": "The Story", "es": "La historia" },
     "heading":  { "en": "About", "es": "Sobre" },
     "heading_em": { "en": "Adrián", "es": "Adrián" },
     "subheading": {
       "en": "The craftsman behind every weld, every measurement, every structure that stands.",
-      "es": "El artesano detrás de cada soldadura, cada medición, cada estructura que se sostiene."
+      "es": "El artesano detrás de cada soldadura, cada medida y cada estructura que se mantiene en pie."
     },
     "paragraphs": {
       "en": [
-        "Adrián's story didn't start in Chicago. It started in Mexico, learning the value of hard work, precision, and responsibility — working hands-on with metal and construction long before arriving in the city.",
-        "When he arrived in Chicago — known as the city of steel — it felt like purpose meeting opportunity. What began as a trade became a calling.",
-        "Structure Art combines structural welding, custom metal fabrication, wood integration, and construction expertise to deliver projects that are not only strong — but meaningful. Because behind every balcony, staircase, and frame, there is a family that depends on that structure."
+        "Adrián's story didn't start in Chicago. It started in Mexico, learning the value of hard work, precision, and responsibility, working hands-on with metal and construction long before arriving in the city.",
+        "When he arrived in Chicago, known as the city of steel, it felt like purpose meeting opportunity. What began as a trade became a calling.",
+        "Structure Art combines structural welding, custom metal fabrication, wood integration, and construction expertise to deliver projects that are not only strong, but meaningful. Every balcony, staircase, and frame is something people walk on, lean on, and live with every day."
       ],
       "es": [
-        "La historia de Adrián no empezó en Chicago. Empezó en México, aprendiendo el valor del trabajo duro, la precisión y la responsabilidad — trabajando manos a la obra con metal y construcción mucho antes de llegar a la ciudad.",
-        "Cuando llegó a Chicago — conocida como la ciudad del acero — sintió que el propósito se encontraba con la oportunidad. Lo que empezó como un oficio se convirtió en una vocación.",
-        "Structure Art combina soldadura estructural, fabricación de metal custom, integración de madera y experiencia en construcción para entregar proyectos que no solo son fuertes — sino significativos. Porque detrás de cada balcón, escalera y marco, hay una familia que depende de esa estructura."
+        "La historia de Adrián no empezó en Chicago. Empezó en México, donde aprendió el valor del trabajo duro, la precisión y la responsabilidad, trabajando con sus propias manos el metal y la construcción mucho antes de llegar a la ciudad.",
+        "Cuando llegó a Chicago, conocida como la ciudad del acero, sintió que el propósito se encontraba con la oportunidad. Lo que empezó como un oficio se convirtió en una vocación.",
+        "Structure Art combina soldadura estructural, fabricación de metal a medida, integración de madera y experiencia en construcción para entregar proyectos que no solo son fuertes, sino que tienen sentido. Cada balcón, escalera y marco es algo que la gente pisa, en lo que se apoya y con lo que vive todos los días."
       ]
     },
     "pull_quote": {
@@ -28,15 +28,16 @@
     },
     "mission": {
       "en": "Build strong. Serve with respect. Deliver work that lasts.",
-      "es": "Construir fuerte. Servir con respeto. Entregar trabajo que dura."
+      "es": "Construir fuerte. Servir con respeto. Entregar trabajo que perdura."
     },
     "mission_label": {
-      "en": "— The Structure Art Mission",
-      "es": "— La Misión de Structure Art"
+      "en": "The Structure Art Mission",
+      "es": "La misión de Structure Art"
     },
-    "cta": { "en": "Work With Adrián", "es": "Trabaja Con Adrián" },
-    "stat_strip": { "en": "8 Years · Metal + Wood · Chicago", "es": "8 Años · Metal + Madera · Chicago" },
-    "portrait": "PENDIENTE"
+    "cta": { "en": "Work With Adrián", "es": "Trabaja con Adrián" },
+    "stat_strip": { "en": "8 Years of Experience · 6 in the U.S. · Metal + Wood · Chicago", "es": "8 años de experiencia · 6 en Estados Unidos · Metal + madera · Chicago" },
+    "portrait": "/media/about/adrian-portrait-900.webp",
+    "portrait_small": "/media/about/adrian-portrait-600.webp"
   },
 
   "proceso": [

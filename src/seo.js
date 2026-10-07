@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLang } from './lang';
+import { SITE_URL as SITE, OG_DEFAULT } from './config';
 
-// Dominio propio pendiente de confirmar. Mientras tanto, el default de Vercel.
-// Cuando exista dominio, definir REACT_APP_SITE_URL en Vercel; no hay que tocar codigo.
-const SITE = process.env.REACT_APP_SITE_URL || 'https://structure-art-otyl.vercel.app';
+// La URL del sitio vive en src/site.json. El HTML inicial de cada ruta ya trae
+// estas etiquetas (scripts/prerender-meta.js); este hook las mantiene al navegar.
 
 function setMeta(attr, key, content) {
   let el = document.head.querySelector(`meta[${attr}="${key}"]`);
@@ -31,7 +31,7 @@ function setLink(rel, href, hreflang) {
 }
 
 // Titulo, descripcion, Open Graph, canonical y hreflang por pagina.
-export function useMeta({ title, description, image }) {
+export function useMeta({ title, description, image, noindex = false }) {
   const { pathname } = useLocation();
   const { lang } = useLang();
 
@@ -43,11 +43,17 @@ export function useMeta({ title, description, image }) {
     setMeta('property', 'og:description', description);
     setMeta('property', 'og:type', 'website');
     setMeta('property', 'og:url', SITE + pathname);
-    setMeta('property', 'og:image', SITE + (image || '/media/video/hero-poster-1280.webp'));
+    setMeta('property', 'og:image', SITE + (image || OG_DEFAULT));
+    setMeta('name', 'twitter:title', title);
+    setMeta('name', 'twitter:description', description);
+    setMeta('name', 'twitter:image', SITE + (image || OG_DEFAULT));
+    setMeta('property', 'og:locale', lang === 'es' ? 'es_US' : 'en_US');
+    if (noindex) setMeta('name', 'robots', 'noindex');
+    else document.head.querySelector('meta[name="robots"]')?.remove();
     setLink('canonical', SITE + pathname);
     const rest = pathname.replace(/^\/(en|es)/, '');
     setLink('alternate', `${SITE}/en${rest}`, 'en');
     setLink('alternate', `${SITE}/es${rest}`, 'es');
     setLink('alternate', `${SITE}/en${rest}`, 'x-default');
-  }, [title, description, image, pathname, lang]);
+  }, [title, description, image, noindex, pathname, lang]);
 }
