@@ -19,6 +19,15 @@ export const SHOW_CLIENT_POSTS = false;
 export const SITE_URL = (process.env.REACT_APP_SITE_URL || site.url).replace(/\/$/, '');
 export const OG_DEFAULT = site.og_default;
 
+// Perfil de Google "Structure Art Built" (CID 1798058473744098647, Place ID ChIJy3XjY_eprqYRV-XlxKf88xg).
+// GOOGLE_REVIEW_URL abre directo la ventana "escribir resena". Cuando el perfil
+// este verificado, cambialo por el link oficial de Google (g.page/r/.../review).
+// Si cambias GOOGLE_PROFILE_URL, cambialo tambien en sameAs (scripts/prerender-meta.js).
+export const GOOGLE_PROFILE_URL = 'https://www.google.com/maps?cid=1798058473744098647';
+export const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=ChIJy3XjY_eprqYRV-XlxKf88xg';
+export const GOOGLE_MAP_EMBED_URL = 'https://www.google.com/maps?cid=1798058473744098647&output=embed';
+export const GOOGLE_DIRECTIONS_URL = 'https://www.google.com/maps/dir/?api=1&destination=Structure%20Art%20Built&destination_place_id=ChIJy3XjY_eprqYRV-XlxKf88xg';
+
 export const LANGS = ['en', 'es'];
 export const DEFAULT_LANG = 'en';
 
