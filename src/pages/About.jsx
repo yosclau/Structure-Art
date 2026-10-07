@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../lang';
 import { useMeta } from '../seo';
-import { isPending } from '../config';
 import Pending, { PendingSection } from '../components/Pending';
+import Portrait from '../components/Portrait';
 import useReveal from '../components/useReveal';
 import about from '../content/about.json';
 
@@ -18,11 +18,7 @@ export default function About() {
         <div className="sec-inner">
           <div className="artisan-grid">
             <div className="artisan-portrait reveal">
-              {isPending(about.bio.portrait) ? (
-                <Pending label={L(ui.about_page.portrait_pending)} aspect="3/4" />
-              ) : (
-                <img src={about.bio.portrait} alt={`${L(about.bio.heading)} ${L(about.bio.heading_em)}`} />
-              )}
+              <Portrait eager />
             </div>
             <div className="artisan-copy reveal delay-1">
               <span className="eyebrow">{L(about.bio.eyebrow)}</span>

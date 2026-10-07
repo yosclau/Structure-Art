@@ -15,7 +15,7 @@
       "services": [
         {
           "id": "metal-railings",
-          "name": { "en": "Metal & Railings", "es": "Metal y Barandales" },
+          "name": { "en": "Metal & Railings", "es": "Metal y barandales" },
           "blurb": {
             "en": "Railings, stairs and structural steel deck systems, fabricated in-house.",
             "es": "Barandales, escaleras y sistemas estructurales de acero para decks, fabricados en taller propio."
@@ -26,7 +26,7 @@
         },
         {
           "id": "gates-fencing",
-          "name": { "en": "Gates & Fencing", "es": "Portones y Cercas" },
+          "name": { "en": "Gates & Fencing", "es": "Portones y cercas" },
           "blurb": {
             "en": "Custom gates, chain link, vinyl and privacy fencing.",
             "es": "Portones a medida, malla ciclónica, vinilo y cercas de privacidad."
@@ -37,7 +37,7 @@
         },
         {
           "id": "concrete-sitework",
-          "name": { "en": "Concrete & Site Work", "es": "Concreto y Obra Exterior" },
+          "name": { "en": "Concrete & Site Work", "es": "Concreto y obra exterior" },
           "blurb": {
             "en": "Excavation, drainage and concrete foundation work.",
             "es": "Excavación, drenaje y trabajo de cimentación en concreto."
@@ -48,7 +48,7 @@
         },
         {
           "id": "kitchen-bath-stone",
-          "name": { "en": "Kitchen, Bath & Stone", "es": "Cocina, Baño y Piedra" },
+          "name": { "en": "Kitchen, Bath & Stone", "es": "Cocina, baño y piedra" },
           "blurb": {
             "en": "Full kitchen and bath remodels. Slab stone and marble fabrication and install.",
             "es": "Remodelación completa de cocina y baño. Fabricación e instalación de losa de piedra y mármol."
@@ -74,7 +74,7 @@
       "services": [
         {
           "id": "custom-furniture",
-          "name": { "en": "Custom Furniture", "es": "Muebles a Medida" },
+          "name": { "en": "Custom Furniture", "es": "Muebles a medida" },
           "blurb": {
             "en": "One-off pieces in wood and metal, built to the room.",
             "es": "Piezas únicas en madera y metal, hechas a la medida del espacio."
@@ -96,7 +96,7 @@
         },
         {
           "id": "interior-woodwork",
-          "name": { "en": "Interior Woodwork", "es": "Carpintería de Interiores" },
+          "name": { "en": "Interior Woodwork", "es": "Carpintería de interiores" },
           "blurb": {
             "en": "Custom doors, built-ins and architectural millwork.",
             "es": "Puertas a medida, empotrados y carpintería arquitectónica."

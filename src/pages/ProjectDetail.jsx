@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useLang } from '../lang';
 import { useMeta } from '../seo';
 import { isPending, SHOW_PENDING, logMissing } from '../config';
-import Img, { largestSrc } from '../components/Img';
+import Img from '../components/Img';
 import Lightbox from '../components/Lightbox';
 import Pending from '../components/Pending';
 import projectsData from '../content/projects.json';
@@ -16,9 +16,10 @@ export default function ProjectDetail() {
   const project = projectsData.projects.find((p) => p.slug === slug);
   const title = project ? L(project.title) : L(ui.detail.not_found);
   useMeta({
-    title: `${title} — Structure Art`,
+    title: `${title} | Structure Art`,
     description: project ? L(project.description) : L(ui.meta.portfolio_desc),
-    image: project ? largestSrc(project.images.find((i) => i.slug === project.cover) || project.images[0]) : undefined,
+    image: project ? `/media/og/${project.slug}.jpg` : undefined,
+    noindex: !project,
   });
 
   const metaPending = project

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../lang';
 import { useMeta } from '../seo';
-import { CONTACT, isPending } from '../config';
+import { SHOW_PENDING, SHOW_CLIENT_POSTS } from '../config';
 import HeroVideo from '../components/HeroVideo';
 import PhoneReel from '../components/PhoneReel';
 import Img from '../components/Img';
+import Portrait from '../components/Portrait';
 import Pending, { PendingSection } from '../components/Pending';
 import useReveal from '../components/useReveal';
 import LeadForm from '../components/LeadForm';
@@ -102,9 +103,12 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div className="division-photo">
-              <Pending label={L(ui.divisions.photo_pending_label)} aspect="16/10" />
-            </div>
+            {/* Foto de Studio pendiente: en produccion se oculta solo el cuadro vacio. */}
+            {SHOW_PENDING && (
+              <div className="division-photo">
+                <Pending label={L(ui.divisions.photo_pending_label)} aspect="16/10" />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -180,11 +184,7 @@ export default function Home() {
         <div className="sec-inner">
           <div className="artisan-grid">
             <div className="artisan-portrait reveal">
-              {isPending(about.bio.portrait) ? (
-                <Pending label={L(ui.about_page.portrait_pending)} aspect="3/4" />
-              ) : (
-                <img src={about.bio.portrait} alt={`${L(about.bio.heading)} ${L(about.bio.heading_em)}`} loading="lazy" />
-              )}
+              <Portrait />
             </div>
             <div className="artisan-copy reveal delay-1">
               <span className="eyebrow">{L(about.bio.eyebrow)}</span>
@@ -218,14 +218,20 @@ export default function Home() {
               <PhoneReel key={src} src={src} caption={L(ui.jobsite.captions[i])} />
             ))}
           </div>
-          <div className="reviews-sub reveal">
-            <h3>{L(ui.jobsite.reviews_title)}</h3>
-          </div>
-          <div className="reel-track">
-            {[1, 2, 3].map((n) => (
-              <Pending key={n} label={L(ui.jobsite.reviews_pending)} className="phone-shape" />
-            ))}
-          </div>
+          {/* "What Clients Post": oculto hasta tener publicaciones reales de clientes.
+              Se activa con SHOW_CLIENT_POSTS en src/config.js. */}
+          {SHOW_CLIENT_POSTS && (
+            <>
+              <div className="reviews-sub reveal">
+                <h3>{L(ui.jobsite.reviews_title)}</h3>
+              </div>
+              <div className="reel-track">
+                {[1, 2, 3].map((n) => (
+                  <Pending key={n} label={L(ui.jobsite.reviews_pending)} className="phone-shape" />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
 

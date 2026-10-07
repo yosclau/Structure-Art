@@ -62,7 +62,7 @@ export default function LeadForm({ variant = 'contact' }) {
   return (
     <form className="form-grid" onSubmit={onSubmit} noValidate>
       <div className="hp-field" aria-hidden="true">
-        <label htmlFor={`${variant}-gotcha`}>Leave this empty</label>
+        <label htmlFor={`${variant}-gotcha`}>{L(ui.form.gotcha)}</label>
         <input id={`${variant}-gotcha`} tabIndex="-1" autoComplete="off" value={values._gotcha || ''} onChange={set('_gotcha')} />
       </div>
 

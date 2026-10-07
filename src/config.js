@@ -1,3 +1,5 @@
+import site from './site.json';
+
 // Configuracion global del sitio.
 // SHOW_PENDING: true dibuja los bloques pendientes con etiqueta (desarrollo).
 // false conserva la composicion sin etiqueta y omite secciones vacias (produccion).
@@ -6,6 +8,16 @@ export const SHOW_PENDING = process.env.NODE_ENV !== 'production';
 // Minimo de proyectos para que un filtro del portafolio se renderice.
 // Hoy 1 para que "Concreto y Obra Exterior" salga en el lanzamiento; subir a 2 despues.
 export const MIN_PROJECTS_PER_FILTER = 1;
+
+// Seccion "What Clients Post" (3 marcos de telefono). Apagada hasta que existan
+// publicaciones reales de clientes; el codigo sigue en Home.jsx. Cambiar a true
+// y poner los videos/capturas reales para mostrarla.
+export const SHOW_CLIENT_POSTS = false;
+
+// URL publica del sitio. La fuente unica es src/site.json (o la variable
+// REACT_APP_SITE_URL en Vercel). No escribir el dominio en ningun otro lugar.
+export const SITE_URL = (process.env.REACT_APP_SITE_URL || site.url).replace(/\/$/, '');
+export const OG_DEFAULT = site.og_default;
 
 export const LANGS = ['en', 'es'];
 export const DEFAULT_LANG = 'en';

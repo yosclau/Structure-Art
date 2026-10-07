@@ -3,6 +3,7 @@ import { useLang } from '../lang';
 import { useMeta } from '../seo';
 import Img from '../components/Img';
 import Pending from '../components/Pending';
+import { SHOW_PENDING } from '../config';
 import LeadForm from '../components/LeadForm';
 import useReveal from '../components/useReveal';
 import services from '../content/services.json';
@@ -85,10 +86,13 @@ export default function Services() {
           <div className="projects-grid">
             {studio.services.map((s) => (
               <div key={s.id} className="project-card reveal">
-                <div className="card-img">
-                  <Pending label={L(ui.divisions.photo_pending_label)} aspect="4/3" />
-                </div>
-                <div className="card-meta">
+                {/* Fotos de Studio en camino: en produccion se oculta el cuadro vacio. */}
+                {SHOW_PENDING && (
+                  <div className="card-img">
+                    <Pending label={L(ui.divisions.photo_pending_label)} aspect="4/3" />
+                  </div>
+                )}
+                <div className={`card-meta${SHOW_PENDING ? '' : ' card-meta-solo'}`}>
                   <h3 style={{ marginTop: 0 }}>{L(s.name)}</h3>
                   <p style={{ fontSize: 14, color: 'var(--muted)', margin: '8px 0' }}>{L(s.blurb)}</p>
                   <span className="card-cat">{L(ui.services_page.coming)}</span>

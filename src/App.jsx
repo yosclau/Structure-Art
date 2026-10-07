@@ -14,6 +14,7 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const TradePartners = lazy(() => import('./pages/TradePartners'));
 const Privacy = lazy(() => import('./pages/Privacy'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function RootRedirect() {
   return <Navigate to={`/${storedLang()}`} replace />;
@@ -25,23 +26,32 @@ function ScrollToTop() {
   return null;
 }
 
-function LangShell() {
-  const { lang } = useParams();
-  useEffect(() => { if (isValidLang(lang)) persistLang(lang); }, [lang]);
-  if (!isValidLang(lang)) return <Navigate to={`/${storedLang()}`} replace />;
+// Ruta sin prefijo de idioma valido: pagina 404 en el idioma guardado.
+function NotFoundShell() {
+  return <Shell lang={storedLang()}><NotFound /></Shell>;
+}
+
+function Shell({ lang, children }) {
   return (
     <LangProvider lang={lang}>
       <ScrollToTop />
       <Navbar />
       <main>
         <Suspense fallback={<div className="route-loading" />}>
-          <Outlet />
+          {children}
         </Suspense>
       </main>
       <Footer />
       <MobileBar />
     </LangProvider>
   );
+}
+
+function LangShell() {
+  const { lang } = useParams();
+  useEffect(() => { if (isValidLang(lang)) persistLang(lang); }, [lang]);
+  if (!isValidLang(lang)) return <NotFoundShell />;
+  return <Shell lang={lang}><Outlet /></Shell>;
 }
 
 export default function App() {
@@ -58,9 +68,9 @@ export default function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="trade-partners" element={<TradePartners />} />
           <Route path="privacy" element={<Privacy />} />
-          <Route path="*" element={<Navigate to="." replace />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="*" element={<RootRedirect />} />
+        <Route path="*" element={<NotFoundShell />} />
       </Routes>
     </BrowserRouter>
   );

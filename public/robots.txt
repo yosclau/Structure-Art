@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /media/video/
-
-Sitemap: https://structure-art-otyl.vercel.app/sitemap.xml
